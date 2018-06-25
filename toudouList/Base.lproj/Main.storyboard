@@ -1,24 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="k28-1U-fYw">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--藤堂リスト-->
+        <scene sceneID="wRH-Pl-ULl">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <tableViewController id="zR4-lL-Zu9" customClass="toudouListTableViewController" customModule="toudouList" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Eov-fQ-HNm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="TWR-77-hjQ" style="IBUITableViewCellStyleDefault" id="oyU-Ha-FIP">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oyU-Ha-FIP" id="NUY-mG-b6L">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TWR-77-hjQ">
+                                            <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="zR4-lL-Zu9" id="NQH-mY-pg5"/>
+                            <outlet property="delegate" destination="zR4-lL-Zu9" id="mBY-0N-Gra"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="藤堂リスト" id="2S1-ml-Umb">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="eAt-uB-gRs">
+                            <connections>
+                                <segue destination="XRf-Yo-deG" kind="show" id="guC-Ax-Xg0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bfn-tf-Mgd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="741" y="99"/>
+        </scene>
+        <!--Add Todo View Controller-->
+        <scene sceneID="uyi-lo-fCW">
+            <objects>
+                <viewController id="XRf-Yo-deG" customClass="AddTodoViewController" customModule="toudouList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AOr-zr-Ty0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="追加したい藤堂を入力してください。" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Pz-44-I4D">
+                                <rect key="frame" x="40" y="318" width="295" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8WM-Hc-WbM">
+                                <rect key="frame" x="171.5" y="398" width="31" height="30"/>
+                                <state key="normal" title="追加"/>
+                                <connections>
+                                    <action selector="add:" destination="XRf-Yo-deG" eventType="touchUpInside" id="ruq-Nf-YWv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ILs-z9-afV" firstAttribute="trailing" secondItem="2Pz-44-I4D" secondAttribute="trailing" constant="40" id="475-9Z-Kqk"/>
+                            <constraint firstItem="2Pz-44-I4D" firstAttribute="leading" secondItem="ILs-z9-afV" secondAttribute="leading" constant="40" id="HqA-qr-1gu"/>
+                            <constraint firstItem="2Pz-44-I4D" firstAttribute="centerY" secondItem="AOr-zr-Ty0" secondAttribute="centerY" id="MeO-C0-f5j"/>
+                            <constraint firstItem="8WM-Hc-WbM" firstAttribute="centerX" secondItem="AOr-zr-Ty0" secondAttribute="centerX" id="bqE-6Q-wOS"/>
+                            <constraint firstItem="8WM-Hc-WbM" firstAttribute="top" secondItem="2Pz-44-I4D" secondAttribute="bottom" constant="50" id="brv-gm-MYV"/>
+                            <constraint firstItem="2Pz-44-I4D" firstAttribute="centerX" secondItem="AOr-zr-Ty0" secondAttribute="centerX" id="cIC-DF-U18"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ILs-z9-afV"/>
+                    </view>
+                    <connections>
+                        <outlet property="addButton" destination="8WM-Hc-WbM" id="l3J-k9-2qg"/>
+                        <outlet property="textField" destination="2Pz-44-I4D" id="kTU-4O-Cvc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Axu-T1-DUk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1666" y="99"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7SH-jC-dc9">
+            <objects>
+                <navigationController id="k28-1U-fYw" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xdv-W8-l6u">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="zR4-lL-Zu9" kind="relationship" relationship="rootViewController" id="u5Z-HV-f7O"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yPx-37-lUb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-212" y="99"/>
         </scene>
     </scenes>
 </document>
