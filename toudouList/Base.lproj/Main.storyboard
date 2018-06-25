@@ -63,7 +63,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="追加したい藤堂を入力してください。" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Pz-44-I4D">
-                                <rect key="frame" x="40" y="318" width="295" height="30"/>
+                                <rect key="frame" x="55.5" y="318" width="264" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -75,12 +75,21 @@
                                     <action selector="add:" destination="XRf-Yo-deG" eventType="touchUpInside" id="ruq-Nf-YWv"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="入力した文字は藤堂ではありません。" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vJM-6l-xqU">
+                                <rect key="frame" x="40" y="247.5" width="295" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="ILs-z9-afV" firstAttribute="trailing" secondItem="2Pz-44-I4D" secondAttribute="trailing" constant="40" id="475-9Z-Kqk"/>
-                            <constraint firstItem="2Pz-44-I4D" firstAttribute="leading" secondItem="ILs-z9-afV" secondAttribute="leading" constant="40" id="HqA-qr-1gu"/>
+                            <constraint firstItem="ILs-z9-afV" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="2Pz-44-I4D" secondAttribute="trailing" id="475-9Z-Kqk"/>
+                            <constraint firstItem="ILs-z9-afV" firstAttribute="trailing" secondItem="vJM-6l-xqU" secondAttribute="trailing" constant="40" id="CV7-Fb-Hue"/>
+                            <constraint firstItem="2Pz-44-I4D" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ILs-z9-afV" secondAttribute="leading" id="HqA-qr-1gu"/>
                             <constraint firstItem="2Pz-44-I4D" firstAttribute="centerY" secondItem="AOr-zr-Ty0" secondAttribute="centerY" id="MeO-C0-f5j"/>
+                            <constraint firstItem="2Pz-44-I4D" firstAttribute="top" secondItem="vJM-6l-xqU" secondAttribute="bottom" constant="50" id="a4G-Sg-r9B"/>
+                            <constraint firstItem="vJM-6l-xqU" firstAttribute="leading" secondItem="ILs-z9-afV" secondAttribute="leading" constant="40" id="bPV-h3-ttW"/>
                             <constraint firstItem="8WM-Hc-WbM" firstAttribute="centerX" secondItem="AOr-zr-Ty0" secondAttribute="centerX" id="bqE-6Q-wOS"/>
                             <constraint firstItem="8WM-Hc-WbM" firstAttribute="top" secondItem="2Pz-44-I4D" secondAttribute="bottom" constant="50" id="brv-gm-MYV"/>
                             <constraint firstItem="2Pz-44-I4D" firstAttribute="centerX" secondItem="AOr-zr-Ty0" secondAttribute="centerX" id="cIC-DF-U18"/>
@@ -89,12 +98,13 @@
                     </view>
                     <connections>
                         <outlet property="addButton" destination="8WM-Hc-WbM" id="l3J-k9-2qg"/>
+                        <outlet property="errorText" destination="vJM-6l-xqU" id="tKK-9K-g8w"/>
                         <outlet property="textField" destination="2Pz-44-I4D" id="kTU-4O-Cvc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Axu-T1-DUk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1666" y="99"/>
+            <point key="canvasLocation" x="1664.8" y="98.50074962518741"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7SH-jC-dc9">
